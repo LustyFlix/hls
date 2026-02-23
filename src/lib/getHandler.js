@@ -107,7 +107,7 @@ export default function getHandler(options, proxy) {
 
     if (!/^\/https?:/.test(req.url) && !isValidHostName(location.hostname)) {
       const uri = new URL(req.url ?? web_server_url, "http://localhost:3000");
-      if (uri.pathname === "/m3u8-proxy") {
+      if (uri.pathname === "/proxy") {
         let headers = {};
         try {
           headers = JSON.parse(uri.searchParams.get("headers") ?? "{}");
